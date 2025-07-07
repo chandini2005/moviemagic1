@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Movie Magic</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .input-box {
+      margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 80%;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .btn-red {
+      background-color: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .btn-white {
+      background-color: #eee;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      width: 80%;
+    }
+
+    .btn-white img {
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .or-line {
+      margin: 20px 0;
+      font-weight: bold;
+      color: #999;
+    }
+
+    a {
+      color: black;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .skip {
+      display: block;
+      margin-top: 20px;
+      color: #666;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Movie Magic</h1>
+  <p>To continue, enter your phone number</p>
+
+  <div class="input-box">
+    <input type="text" id="phone" placeholder="Phone Number" />
+  </div>
+
+  <button class="btn-red" onclick="sendOTP()">Continue</button>
+
+  <div class="or-line">OR</div>
+
+  <button class="btn-white" onclick="googleLogin()">
+    <img src="https://img.icons8.com/color/20/google-logo.png" />
+    Continue with Google
+  </button>
+
+  <p>Don't have an account? <a href="#">Sign Up</a></p>
+  <div class="skip" onclick="alert('You skipped login')">Skip →</div>
+
+  <script>
+    function sendOTP() {
+      const phone = document.getElementById('phone').value;
+      if (phone.length < 10) {
+        alert("Please enter a valid phone number");
+        return;
+      }
+      const otp = prompt("Enter the OTP sent to " + phone);
+      if (otp === "1234") {
+        alert("Logged in successfully!");
+        window.location.href = "home.html";
+      } else {
+        alert("Invalid OTP");
+      }
+    }
+
+    function googleLogin() {
+      const email = prompt("Choose your Google account (enter email):");
+      if (email && email.includes("@")) {
+        alert("Logged in with " + email);
+        window.location.href = "home.html";
+      } else {
+        alert("Invalid email");
+      }
+    }
+  </script>
+
+</body>
+</html>

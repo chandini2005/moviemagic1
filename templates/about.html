@@ -1,0 +1,126 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Magic</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      padding: 12px;
+      background: #f0f0f0;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    /* Movie Section */
+    .movie-section {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 480px;
+      margin: auto;
+    }
+
+    .movie-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .movie-grid img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .movie-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Bottom Navigation */
+    .bottom-nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #ffffff;
+      padding: 10px 0;
+      font-size: 0.9rem;
+      border-top: 1px solid #ccc;
+    }
+
+    .nav-item {
+      text-align: center;
+      text-decoration: none;
+      flex: 1;
+      color: #555;
+    }
+
+    .nav-item span {
+      display: block;
+      font-size: 1.1rem;
+    }
+
+    .nav-item:hover {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔍 Search Bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search movies..." />
+  </div>
+
+  <!-- 🎬 Movie Posters Grid -->
+  <div class="movie-section">
+    <div class="movie-grid">
+      <a href="8 vasantalu.html"><img src="images/8 vasantalu.jpg" alt="8 vasantalu" /></a>
+      <a href="28 years later.html"><img src="images/28 years later.jpg" alt="28 years later" /></a>
+      <a href="ballerina.html"><img src="images/ballerina.jpg" alt="ballerina" /></a>
+      <a href="bhairavam.html"><img src="images/bhairavam.jpg" alt="bhairavam" /></a>
+      <a href="dragon.html"><img src="images/dragon.jpg" alt="dragon" /></a>
+      <a href="elio.html"><img src="images/elio.jpg" alt="elio" /></a>
+      <a href="kubera.html"><img src="images/kubera.jpg" alt="kubera" /></a>
+      <a href="sitara.html"><img src="images/sitara.jpg" alt="sitara" /></a>
+    </div>
+  </div>
+
+  <!-- 🔘 Bottom Navigation -->
+  <div class="bottom-nav">
+    <a href="index.html" class="nav-item"><span>🏠<br>Home</span></a>
+    <a href="theatres.html" class="nav-item"><span>🎬<br>Theatres</span></a>
+    <a href="comingsoon.html" class="nav-item"><span>🎞<br>Coming Soon</span></a>
+    <a href="profile.html" class="nav-item"><span>👤<br>Profile</span></a>
+  </div>
+
+</body>
+</html>
