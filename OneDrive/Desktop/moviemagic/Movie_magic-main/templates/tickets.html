@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🎟 Your Ticket - MovieMagic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+        }
+        .ticket-card {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 0 15px #9b59b6;
+        }
+        .ticket-card h2 {
+            color: #ff6b00;
+            margin-bottom: 10px;
+        }
+        .ticket-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .ticket-details p {
+            margin: 10px 0;
+        }
+        .btn-home {
+            margin-top: 30px;
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn-home:hover {
+            background-color: #8e44ad;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ticket-card">
+        <h2>🎉 Booking Confirmed!</h2>
+        <p>Thank you for booking with <strong>MovieMagic</strong>.</p>
+
+        <div class="ticket-details">
+            <p><strong>Movie:</strong> {{ booking.Movie }}</p>
+            <p><strong>Date:</strong> {{ booking.Date }}</p>
+            <p><strong>Time:</strong> {{ booking.Time }}</p>
+            <p><strong>Seat(s):</strong> {{ booking.Seat }}</p>
+            <p><strong>Booking ID:</strong> {{ booking.BookingID }}</p>
+            <p><strong>Booked by:</strong> {{ booking.Email }}</p>
+        </div>
+
+        <a class="btn-home" href="{{ url_for('home') }}">← Back to Home</a>
+    </div>
+
+</body>
+</html>
